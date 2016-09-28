@@ -9,7 +9,10 @@
 
 # othe 
  * it has about half second slow
+ * there is something wrong with mac os
  * 会产生大约0.5秒的延迟
+ * mac  系统用不了
+ 
 ```shell
 find_svn_branch () {                                                                                                                                                            
     local localdir=`pwd`                                                                                                                                                        
