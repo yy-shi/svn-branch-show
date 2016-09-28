@@ -7,6 +7,9 @@
  * put the shell script append the file  ~/.bashrc or ~/.bash_profile
  * 把以下内容放到 ~/.bashrc 或者 ～/.bash_profile文件 末端
 
+# othe 
+ * it has about half second slow cause of the command 'svn info'
+ * 因为svn info命令比较慢  所以会产生大约0.5秒的延迟
 ```shell
 find_svn_branch () {                                                                                                                                                            
     local localdir=`pwd`                                                                                                                                                        
