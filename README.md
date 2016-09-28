@@ -8,9 +8,7 @@
  * 把以下内容放到 ~/.bashrc 或者 ～/.bash_profile文件 末端
 
 # othe 
- * it has about half second slow
  * there is something wrong with mac os
- * 会产生大约0.5秒的延迟
  * mac  系统用不了
  
 ```shell
