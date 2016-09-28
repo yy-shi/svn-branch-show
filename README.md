@@ -22,7 +22,7 @@ find_svn_branch () {
             remotedir=`svn info $localdir|grep URL|awk '{print $2}'`                                                                                                            
             if [ "$remotedir" != "" ]; then                                                                                                                                     
                 remotebase=`basename $remotedir`                                                                                                                                
-                svn_branch=$remotebase                                                                                                                                          
+                svn_branch="->("$remotebase")"                                                                                                                                          
                 if [ "$remotebase" != "$localbase" ]; then                                                                                                                      
                     return                                                                                                                                                      
                 fi                                                                                                                                                              
