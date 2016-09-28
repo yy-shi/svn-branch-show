@@ -7,9 +7,6 @@
  * put the shell script append the file  ~/.bashrc or ~/.bash_profile
  * 把以下内容放到 ~/.bashrc 或者 ～/.bash_profile文件 末端
 
-# othe 
- * there is something wrong with mac os
- * mac  系统用不了
  
 ```shell
 find_svn_branch () {                                                                                                                                                            
@@ -30,7 +27,8 @@ find_svn_branch () {
             fi                                                                                                                                                                  
                                                                                                                                                                                 
         fi                                                                                                                                                                      
-        localdir=`readlink -e "$localdir/../"` # php realpath                                                                                                                   
+              localdir="$( cd $localdir/../ && pwd -P)"      
+              
         localbase=`basename $localdir`                                                                                                                                          
     done                                                                                                                                                                        
 }                                                                                                                                                                                      
