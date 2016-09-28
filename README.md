@@ -8,24 +8,23 @@ find_svn_branch () {
     local localbase=`basename $localdir`                                                                                                                                        
     local remotedir=""                                                                                                                                                          
     local remotebase=""                                                                                                                                                         
+          svn_branch=""                                                                                                                                                         
     until [ "$localdir" -ef / ]; do                                                                                                                                             
         if [ -d "$localdir/.svn" ]; then                                                                                                                                        
-            remotedir=`svn info|grep URL|awk '{print $2}'`                                                                                                                      
+            remotedir=`svn info $localdir|grep URL|awk '{print $2}'`                                                                                                            
             if [ "$remotedir" != "" ]; then                                                                                                                                     
                 remotebase=`basename $remotedir`                                                                                                                                
+                svn_branch=$remotebase                                                                                                                                          
                 if [ "$remotebase" != "$localbase" ]; then                                                                                                                      
-                    svn_branch=$remotebase                                                                                                                                      
                     return                                                                                                                                                      
                 fi                                                                                                                                                              
-                return                                                                                                                                                          
             fi                                                                                                                                                                  
                                                                                                                                                                                 
         fi                                                                                                                                                                      
         localdir=`readlink -e "$localdir/../"` # php realpath                                                                                                                   
         localbase=`basename $localdir`                                                                                                                                          
     done                                                                                                                                                                        
-    svn_branch=""                                                                                                                                                               
-}                                                                                                                                                                               
+}                                                                                                                                                                                      
 PROMPT_COMMAND="find_svn_branch;$PROMPT_COMMAND"   
 black=$'\[\e[1;30m\]'                                                                                                                                                          
     red=$'\[\e[1;31m\]'                                                                                                                                                         
