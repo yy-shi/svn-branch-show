@@ -2,7 +2,7 @@
  * show svn branch name in terminal
  * 在终端显示svn分支名称
 
-# Directions for use 使用说明
+# Discripton for use 使用说明
 
  * put the shell script append the file  ~/.bashrc or ~/.bash_profile
  * 把以下内容放到 ~/.bashrc 或者 ～/.bash_profile文件 末端
