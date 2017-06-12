@@ -17,7 +17,7 @@ find_svn_branch () {
           svn_branch=""
     until [ "$localdir" -ef / ]; do
         if [ -d "$localdir/.svn" ]; then
-            remotedir=`svn info "$localdir"|grep URL|awk '{print $2}'`
+            remotedir=`svn info "$localdir"|grep '^URL'|awk '{print $2}'`
             if [ "$remotedir" != "" ]; then
                 remotebase=`basename "$remotedir"`
                 svn_branch="($remotebase)"
